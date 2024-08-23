@@ -1,70 +1,100 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
 
-In the project directory, you can run:
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+# Case study / Home assignment
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+## Task 1: Technical Understanding and API Integration
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Instructions:
 
-### `npm run eject`
+1. API Integration:
+    - Check out the Gladia documentation [here](https://docs.gladia.io/chapters/get-started/pages/transcribe-audio) and [here](https://docs.gladia.io/api-reference/introduction)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+    - Write a few lines of code (any language of your choice), using examples in
+the documentation that:
+        - Upload an audio file
+        - Send the audio file to the transcription API
+        - Display the transcribed text to the user
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+    - For displaying the transcribed text you can assume the existence of any
+helper functions you want, just provide a description.
+No need for a UI.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+2. Technical Write-Up:
+    - Write a brief technical guide for developers on how to generate a bullet
+point summary of an audio file.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Task 2: Customer Support Simulation
 
-### Code Splitting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-### Analyzing the Bundle Size
+### Instructions:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Below are some mock customer support tickets. Each ticket will present a
+common issue faced by our customers when using our transcription API.
 
-### Making a Progressive Web App
+For each ticket, provide a detailed response explaining the issue and steps to
+resolve it.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Highlight any additional resources or documentation that would be helpful for the
+customer.
 
-### Advanced Configuration
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
-### Deployment
+### Mock Tickets:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+1. **Ticket 1**: "I keep getting a 401 Unauthorized error when trying to access the
+API."
 
-### `npm run build` fails to minify
+2. **Ticket 2**: "I receive an error when trying some of my files: 413 file too large.
+Why is that and what can I do?"
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+3. **Ticket 3**: "I'm seeing a significant delay in receiving the transcription results.
+Is there a way to speed this up?"
+
+4. **Ticket 4**: "Do you support Chinese?"
+
+5. **Ticket 5**: "We received complaints from our customers about some very
+inaccurate transcriptions yesterday, can you check what happened?"
+
+
+
+
+## Task 3: Technical Documentation and Communication
+
+
+
+### Instructions:
+
+1. **Documentation Review**:
+    - Review [this](https://docs.gladia.io/chapters/audio-intelligence/pages/audio%20to%20llm) documentation page
+    - Identify any areas for improvement in terms of clarity, completeness, and
+usability.
+    - Provide a rewritten version of the section with your improvements. **There’s no need to change the code sections.**
+
+
+
+### Evaluation Criteria:
+
+- **Technical Proficiency**: Ability to understand and work with APIs, orient in
+documentation, problem-solving skills.
+
+- **Customer Support Skills**: Clarity and helpfulness of support ticket responses,
+ability to empathize with customers.
+
+- **Communication and Documentation**: Quality and clarity of technical guide,
+improved documentation.
+
+<br />This assignment should be completed within one week. If you have any questions,
+please reach out to us.
+<br />Good luck!
