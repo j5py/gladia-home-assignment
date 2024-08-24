@@ -4,19 +4,19 @@ import {
   Center, VStack, Heading, Box,
   FormControl, FormLabel, Input,
   FormHelperText, Link, Button,
-  FormErrorMessage
+  FormErrorMessage, Text
 } from "@chakra-ui/react";
 
-import { useState, useEffect } from "react";
-import { object, string } from 'yup';
+import { useState } from "react";
 import { useFormik } from 'formik';
+import { object, string } from 'yup';
 
 
 
 function App() {
 
   const [loading, setLoading] = useState(false);
-  const [response, setResponse] = useState(false);
+  const [response, setResponse] = useState();
 
 
   const gladiaAPI = new RegExp('^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$');
@@ -32,6 +32,7 @@ function App() {
           , api = 'https://api.gladia.io/v2'
           ;
       data.append("audio", values.file);
+      setResponse(false);
       setLoading(true);
       try {
 
@@ -81,20 +82,17 @@ function App() {
 
 
 
-  useEffect(() => {
-    response && console.log(response)
-  }, [response]);
-
-
-
   return (
     <ChakraProvider>
       <Center>
         <VStack>
+
+
           <Heading as='h1' size='xl' mt='20'>Speech-to-Text API</Heading>
+
+
           <form onSubmit={formik.handleSubmit}>
             <Box w="320">
-
 
               <FormControl mt='10' isInvalid={formik.touched.key && formik.errors.key} isRequired>
                 <FormLabel htmlFor='key'>Enter your Gladia API key</FormLabel>
@@ -110,7 +108,6 @@ function App() {
                 </FormHelperText>
                 <FormErrorMessage>{formik.errors.key}</FormErrorMessage>
               </FormControl>
-
               
               <FormControl mt='10'>
                 <FormLabel htmlFor='file'>Select an audio file</FormLabel>
@@ -124,12 +121,14 @@ function App() {
                 />
               </FormControl>
 
-
               <Button type='submit' mt='10' w='100%' colorScheme='green' isLoading={loading}>Submit</Button>
-
-
             </Box>
           </form>
+
+
+          response && <Text m='20' fontSize='xl'>{response}</Text>
+
+
         </VStack>
       </Center>
     </ChakraProvider>
