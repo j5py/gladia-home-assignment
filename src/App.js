@@ -50,6 +50,9 @@ function App() {
       try {
 
 
+        // Task 1 - Main Part of the API Integration - START
+
+
         const upload = await fetch(api + '/upload', {
           method: 'POST',
           headers: { 'x-gladia-key': values.key },
@@ -80,6 +83,9 @@ function App() {
             } else repeat()
           }, 500)
         }
+
+
+        // Task 1 - Main Part of the API Integration - END
 
 
         repeat()
