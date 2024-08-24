@@ -7,19 +7,33 @@ import {
   FormErrorMessage, Text
 } from "@chakra-ui/react";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useFormik } from 'formik';
 import { object, string } from 'yup';
+import ReactPlayer from 'react-player'
 
 
 
 function App() {
 
+  const [defaultAudio, setDefaultAudio] = useState(null);
+  const [playerURL, setPlayerURL] = useState(null);
   const [loading, setLoading] = useState(false);
   const [response, setResponse] = useState();
 
+  const api = 'https://api.gladia.io/v2'
+      , format = new RegExp('^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$')
+      , providedFile = 'rimbaud-sensation.wav'
+      ;
 
-  const gladiaAPI = new RegExp('^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$');
+  useEffect(() => {
+    (async () => {
+      setDefaultAudio(
+        new File([await (await fetch('/' + providedFile)).blob()], providedFile, { type: 'audio/wav' })
+      )
+    })()
+  }, []);
+  
 
 
   const formik = useFormik({
@@ -28,10 +42,9 @@ function App() {
       file: ''
     },
     onSubmit: async values => {
-      const data = new FormData()
-          , api = 'https://api.gladia.io/v2'
-          ;
-      data.append("audio", values.file);
+      const data = new FormData();
+      data.append("audio", values.file || defaultAudio);
+      setPlayerURL(URL.createObjectURL(values.file || defaultAudio));
       setResponse(false);
       setLoading(true);
       try {
@@ -76,7 +89,7 @@ function App() {
       }
     },
     validationSchema: object({
-      key: string().matches(gladiaAPI, "Does not match the Gladia format").required("Required")
+      key: string().matches(format, "Does not match the Gladia format").required("Required")
     })
   });
 
@@ -91,8 +104,8 @@ function App() {
           <Heading as='h1' size='xl' mt='20'>Speech-to-Text API</Heading>
 
 
-          <form onSubmit={formik.handleSubmit}>
-            <Box w="320">
+          <Box w="320">
+            <form onSubmit={formik.handleSubmit}>
 
               <FormControl mt='10' isInvalid={formik.touched.key && formik.errors.key} isRequired>
                 <FormLabel htmlFor='key'>Enter your Gladia API key</FormLabel>
@@ -119,14 +132,29 @@ function App() {
                     formik.setFieldValue("file", event.currentTarget.files[0])
                   }}
                 />
+                <FormHelperText>
+                  A default audio file will be sent if you do not select any
+                </FormHelperText>
               </FormControl>
 
               <Button type='submit' mt='10' w='100%' colorScheme='green' isLoading={loading}>Submit</Button>
+            
+            </form>
+          </Box>
+
+
+          {
+            response && <Box mt='20' w='80%'>
+              <ReactPlayer
+                url={playerURL}
+                controls={true}
+                playing={false}
+                width="100%"
+                height="50px"
+              />
+              <Text mt='10' mb='20' fontSize='xl'>{response}</Text>
             </Box>
-          </form>
-
-
-          response && <Text m='20' fontSize='xl'>{response}</Text>
+          }
 
 
         </VStack>
