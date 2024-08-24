@@ -8,8 +8,8 @@ import {
 } from "@chakra-ui/react";
 
 import { useState, useEffect } from "react";
+import { object, string } from 'yup';
 import { useFormik } from 'formik';
-
 
 
 
@@ -19,8 +19,14 @@ function App() {
   const [response, setResponse] = useState(false);
 
 
+  const gladiaAPI = new RegExp('^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$');
+
+
   const formik = useFormik({
-    initialValues: { key: '', file: ''},
+    initialValues: {
+      key: '',
+      file: ''
+    },
     onSubmit: async values => {
       const data = new FormData()
           , api = 'https://api.gladia.io/v2'
@@ -67,13 +73,18 @@ function App() {
         setResponse(error);
         setLoading(false)
       }
-    }
+    },
+    validationSchema: object({
+      key: string().matches(gladiaAPI, "Does not match the Gladia format").required("Required")
+    })
   });
+
 
 
   useEffect(() => {
     response && console.log(response)
   }, [response]);
+
 
 
   return (
@@ -99,9 +110,9 @@ function App() {
                 </FormHelperText>
                 <FormErrorMessage>{formik.errors.key}</FormErrorMessage>
               </FormControl>
-              
 
-              <FormControl mt='10' isInvalid={formik.touched.file && formik.errors.file}>
+              
+              <FormControl mt='10'>
                 <FormLabel htmlFor='file'>Select an audio file</FormLabel>
                 <input
                   id='file'
@@ -111,7 +122,6 @@ function App() {
                     formik.setFieldValue("file", event.currentTarget.files[0])
                   }}
                 />
-                <FormErrorMessage>{formik.errors.file}</FormErrorMessage>
               </FormControl>
 
 
@@ -125,6 +135,7 @@ function App() {
     </ChakraProvider>
   )
 }
+
 
 
 export default App;
