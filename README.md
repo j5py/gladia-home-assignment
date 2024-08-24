@@ -51,7 +51,7 @@ I have reported the instructions provided in [Instructions.md](https://github.co
 
 ##### How to Generate a Bullet Point Summary of an Audio File
 
-The following Shell commands can be executed from a Unix/Linux terminal. The syntax may need to be adapted for Command Prompt, for example, on Windows OS. However, you can use Git Bash (especially from a Visual Studio Code terminal).
+The following Shell commands can be executed from a Unix/Linux terminal. The syntax may need to be adapted for Command Prompt, for example, on Windows OS. However, you can use Git Bash (especially from a Visual Studio Code terminal). Using curl and a terminal facilitates testing, however the documentation also provides examples in Python, JavaScript, PHP, Go, and Java.
 
 ###### Quick Overview of the Necessary Steps
 
