@@ -83,12 +83,12 @@ function App() {
             } else repeat()
           }, 500)
         }
+        repeat()
 
 
         // Task 1 - Main Part of the API Integration - END
 
 
-        repeat()
       } catch (error) {
         setResponse(error);
         setLoading(false)
