@@ -232,7 +232,7 @@ Thanks for reaching out! I'm here to help you with any questions you may have.
 
 Absolutely! Chinese, identified by the ISO 639 language code `zh`, is one of the available options under [Create Transcription](https://docs.gladia.io/api-reference/api-v2/Transcription/post-v2transcription)  > **Body** > `language` and is also one of the possible values of `target_languages` in the examples accessible through [Translation](https://docs.gladia.io/chapters/audio-intelligence/pages/translation) > **Sample code**.
 
-Please let me know if you are making progress. I am available to assist you if you encounter any difficulties.
+Please let me know if you are making progress. I am available to assist you if you encounter any difficulties. You may also refer to the [complete list of supported languages](https://docs.gladia.io/chapters/speech-to-text-api/pages/languages) for any future needs.
 
 <br />
 
@@ -250,7 +250,26 @@ Good Day,
 
 I appreciate you getting in touch. Let's work together to resolve your concern.
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi. Proin porttitor, orci nec nonummy molestie, enim est eleifend mi, non fermentum diam nisl sit amet erat. Duis semper. Duis arcu massa, scelerisque vitae, consequat in, pretium a, enim. Pellentesque congue. Ut in risus volutpat libero pharetra tempor. Cras vestibulum bibendum augue. Praesent egestas leo in pede. Praesent blandit odio eu enim. Pellentesque sed dui ut augue blandit sodales. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aliquam nibh. Mauris ac mauris sed pede pellentesque fermentum. Maecenas adipiscing ante non diam sodales hendrerit.
+Could you please specify which functionality of Gladia or API key is the subject of the inaccurate transcriptions, and could you provide us with any records of the requests and responses?
+
+<br />
+
+Here are some ways to fine-tune the configuration by functionality to prevent inaccuracy:
+
+- **Speech Recognition**
+  - [Multiple languages detection ](https://docs.gladia.io/chapters/speech-to-text-api/pages/speech-recognition#multiple-languages-detection-code-switching): Is not activated by default and allows switching the transcription language, but strong accents may cause misinterpretation.
+  - [Custom vocabulary](https://docs.gladia.io/chapters/speech-to-text-api/pages/speech-recognition#custom-vocabulary) and [Custom spelling](https://docs.gladia.io/chapters/speech-to-text-api/pages/speech-recognition#custom-spelling) can significantly enhance the accuracy of transcriptions in specific contexts, such as professional environments where the use of acronyms and internal expressions is commonplace.
+
+- **Live Speech Recognition**
+  - [Recovering from WebSocket disconnects](https://docs.gladia.io/chapters/speech-to-text-api/pages/live-speech-recognition#recovering-from-websocket-disconnects) could help prevent missing parts that would cause the transcription to appear erroneous.
+  - [Chunk Size Limitation]() and [Thirty Seconds Behavior]() should also be considered to ensure the complete input/output is captured.
+- **Speaker Diarization**
+  - [Speaker diarization](https://docs.gladia.io/chapters/speech-to-text-api/pages/speaker-diarization) may also improve accuracy by determining the identity of each speaker and attributing their statements accordingly.
+
+<br />
+
+If it is complex for you to specify the context of the feedback observed, we could schedule a meeting to identify it at your convenience.
+
 
 <br />
 
