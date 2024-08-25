@@ -1,26 +1,19 @@
 
+# Gladia Home Assignement 
 
-
-
-
-# Gladia Home Assignement
-
-
+<br />
 
 ## Instructions
 
-
 I have reported the instructions provided in [Instructions.md](https://github.com/j5py/gladia-home-assignment/blob/main/Instructions.md).
 
-
-
+<br />
 
 ## Results
 
-
-
 ### Task 1: Technical Understanding and API Integration
 
+<br />
 
 #### API Integration
 
@@ -46,18 +39,24 @@ I have reported the instructions provided in [Instructions.md](https://github.co
 
 5. Review the [code written to implement the API](https://github.com/j5py/gladia-home-assignment/blob/main/src/App.js)
 
+<br />
+<br />
 
 #### Technical Write-Up
 
 ##### How to Generate a Bullet Point Summary of an Audio File
 
-The following Shell commands can be executed from a Unix/Linux terminal. The syntax may need to be adapted for Command Prompt, for example, on Windows OS. However, you can use Git Bash (especially from a Visual Studio Code terminal). Using curl and a terminal facilitates testing, however the documentation also provides examples in Python, JavaScript, PHP, Go, and Java.
+The following Shell commands can be executed from a Unix/Linux terminal. The syntax may need to be adapted for Command Prompt, for example, on Windows OS. However, you can use Git Bash (especially from a Visual Studio Code terminal). Using curl and a terminal facilitates testing, the documentation also provides examples in Python, JavaScript, PHP, Go, and Java.
+
+<br />
 
 ###### Quick Overview of the Necessary Steps
 
 1. Upload the file to Gladia and get its URL in return
 2. Request Gladia to proceed with the transcription of the file at the given URL
 3. A new URL allows you to obtain a dataset, including the text of the transcription
+
+<br />
 
 ###### Upload Your File to Gladia
 
@@ -75,6 +74,8 @@ curl --request POST \
 | <your_audio_file>     | ./audio.wav   | In case the audio file is in the current directory from which you run curl                                    |
 
 After a short delay for the request to be processed, you will receive a **JSON dataset**, and one key particularly interests us here: `audio_url`. Note the corresponding value for the next step.
+
+<br />
 
 ###### Request Gladia to Process the Transcription of the Uploaded File
 
@@ -94,14 +95,14 @@ curl --request POST \
   }'
 ```
 
-> Don't forget to edit the placeholders, but keep the double quotes in the data parameter to match the JSON format.
-
 | Request parameter     | Comment                                                                                                                                       |
 |-----------------------|-----------------------------------------------------------------------------------------------------------------------------------------------|
 | audio_to_llm          | This parameter allows the subsequent configuration point to be taken into account                                                             |
 | audio_to_llm_config   | Prompt (see **cURL** description of [Create Transcription](https://docs.gladia.io/api-reference/api-v2/Transcription/post-v2transcription))   |
 
-This time, it is the value of `result_url` that you need to note.
+Remember to edit the placeholders, but retain the double quotes in the --data option to ensure it matches the JSON format. This time, it is the value of `result_url` that you need to note.
+
+<br />
 
 ###### Check that the Requested Transcription is Available
 
@@ -111,11 +112,13 @@ curl --request GET \
   --header 'x-gladia-key: <your_gladia_api_key>'
 ```
 
-Note that the value of the key `status` may initially return `queued` or `processing`.  In those case, you will need to repeat the request until you obtain `done` in a JSON dataset that may vary in size depending on the size of the uploaded audio.
+Note that the value of the key `status` may initially return `queued` or `processing`.  In those case, you will need to repeat the request until you obtain `done` in a JSON dataset that may vary in size depending on the length of the uploaded audio.
+
+<br />
 
 ###### Filter the Dataset to Obtain the Summary
 
-First, let's continue with curl to complete the process.
+First, let's continue with curl to complete the process. This request is identical to the previous one, but it allows for filtering of a potentially large result.
 
 ```
 curl --request GET \
@@ -126,8 +129,6 @@ curl --request GET \
   tr -d '"'
 ```
 
-> Request identical to the previous one, but allowing for filtering of a potentially large result.
-
 | Snippet                           | Description                                                       |
 |-----------------------------------|-------------------------------------------------------------------|
 | \\                                | Allows you to split a long command across multiple lines          |
@@ -137,7 +138,7 @@ curl --request GET \
 | tr -d '"'                         | Removes double quotes from the output                             |
 
 
-With JavaScript, you can also request the same URL as in the previous curl command to achieve a more immediate reading of the response access. You can [open Chrome DevTools](https://developer.chrome.com/docs/devtools/open?hl=en) and paste the following code to [execute it from your browser's console](https://developer.chrome.com/docs/devtools/console/javascript?hl=en).
+Now with JavaScript, you can also request the same URL as in the previous curl command to achieve a more immediate reading of the response access. You can [open Chrome DevTools](https://developer.chrome.com/docs/devtools/open?hl=en) and paste your edited version of the code below to [execute it from your browser's console](https://developer.chrome.com/docs/devtools/console/javascript?hl=en).
 
 ```JavaScript
 fetch('<your_result_url>', {
@@ -150,4 +151,7 @@ fetch('<your_result_url>', {
 )
 ```
 
-> So, access to the property of the received object is done via: `<receivedObject>.result.audio_to_llm.results[0].results.response`
+> Knowing that the access can be read with `<receivedObject>.result.audio_to_llm.results[0].results.response` in JavaScript helps us understand that the value we are looking for is part of a much larger structure, which is why it can be tedious to find using the raw result of curl.
+
+<br />
+<br />
