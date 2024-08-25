@@ -192,7 +192,7 @@ Good Day,
 
 Thank you for reaching out to us. We appreciate your inquiry.
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi. Proin porttitor, orci nec nonummy molestie, enim est eleifend mi, non fermentum diam nisl sit amet erat. Duis semper. Duis arcu massa, scelerisque vitae, consequat in, pretium a, enim. Pellentesque congue. Ut in risus volutpat libero pharetra tempor. Cras vestibulum bibendum augue. Praesent egestas leo in pede. Praesent blandit odio eu enim. Pellentesque sed dui ut augue blandit sodales. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aliquam nibh. Mauris ac mauris sed pede pellentesque fermentum. Maecenas adipiscing ante non diam sodales hendrerit.
+This is the expected behavior of the Gladia API for performance reasons. Currently, the API has [limitations](https://docs.gladia.io/chapters/limits-and-specifications/pages/supported-formats#gladia-api-current-limitations) of **135 minutes** and **500 MB** in size, but we provide you with a few [tools for splitting audio files](https://docs.gladia.io/chapters/limits-and-specifications/pages/supported-formats#splitting-oversize-audio-files). You need to initiate the setup of one of these tools based on your environment. Please do not hesitate to confirm when it is resolved, or reach out if you encounter any issues with the configuration.
 
 <br />
 
