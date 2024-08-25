@@ -262,7 +262,7 @@ Here are some ways to fine-tune the configuration by functionality to prevent in
 
 - **Live Speech Recognition**
   - [Recovering from WebSocket disconnects](https://docs.gladia.io/chapters/speech-to-text-api/pages/live-speech-recognition#recovering-from-websocket-disconnects) could help prevent missing parts that would cause the transcription to appear erroneous.
-  - [Chunk Size Limitation]() and [Thirty Seconds Behavior]() should also be considered to ensure the complete input/output is captured.
+  - [Chunk Size Limitation](https://docs.gladia.io/chapters/speech-to-text-api/pages/live-speech-recognition#chunk-size-limitation) and [Thirty Seconds Behavior](https://docs.gladia.io/chapters/speech-to-text-api/pages/live-speech-recognition#thirty-seconds-behavior) should also be considered to ensure the complete input/output is captured.
 - **Speaker Diarization**
   - [Speaker diarization](https://docs.gladia.io/chapters/speech-to-text-api/pages/speaker-diarization) may also improve accuracy by determining the identity of each speaker and attributing their statements accordingly.
 
