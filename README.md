@@ -172,7 +172,9 @@ Good Day,
 
 Thank you for your message. I'm glad to assist you with this matter.
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi. Proin porttitor, orci nec nonummy molestie, enim est eleifend mi, non fermentum diam nisl sit amet erat. Duis semper. Duis arcu massa, scelerisque vitae, consequat in, pretium a, enim. Pellentesque congue. Ut in risus volutpat libero pharetra tempor. Cras vestibulum bibendum augue. Praesent egestas leo in pede. Praesent blandit odio eu enim. Pellentesque sed dui ut augue blandit sodales. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aliquam nibh. Mauris ac mauris sed pede pellentesque fermentum. Maecenas adipiscing ante non diam sodales hendrerit.
+I would first recommend checking if the `x-gladia-key` value used in your request exists and fully matches one of the **API keys** listed on [your Account page](https://app.gladia.io/account). A simple visual check can help spot if the key is altered, but it's good practice to use the 'copy to clipboard' feature and paste the key into your request code to ensure you have the correct value.
+
+Please let me know if this allows you to solve the issue. If you continue to receive the 401 status code, I will first need you to provide me with a few details about your technical environment, such as the code snippet of the request and/or a screenshot of your test.
 
 <br />
 
