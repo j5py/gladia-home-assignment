@@ -88,19 +88,19 @@ curl --request POST \
     "audio_to_llm": true,
     "audio_to_llm_config": {
       "prompts": [
-        "Extract the key points from the transcription"
+        "Extract the key points from the transcription as bullet points"
       ]
     },
     "audio_url": "<your_url_received_after_last_upload>"
   }'
 ```
 
-| Request parameter     | Comment                                                                                                                                       |
-|-----------------------|-----------------------------------------------------------------------------------------------------------------------------------------------|
-| audio_to_llm          | This parameter allows the subsequent configuration point to be taken into account                                                             |
-| audio_to_llm_config   | Prompt (see **cURL** description of [Create Transcription](https://docs.gladia.io/api-reference/api-v2/Transcription/post-v2transcription))   |
+| JSON dataset          | Comment                                                                           |
+|-----------------------|-----------------------------------------------------------------------------------|
+| `audio_to_llm`        | This parameter allows the subsequent configuration point to be taken into account |
+| `audio_to_llm_config` | Edit the content of the `prompts` list (or array) as comma-separated strings      |
 
-Remember to edit the placeholders, but retain the double quotes in the --data option to ensure it matches the JSON format. This time, it is the value of `result_url` that you need to note.
+Remember to edit the placeholders, but retain the double quotes in the --data option to ensure it matches the JSON format. Check **cURL** description of [Create Transcription](https://docs.gladia.io/api-reference/api-v2/Transcription/post-v2transcription) to see an example of a custom prompt request, and [Audio to LLM](https://docs.gladia.io/chapters/audio-intelligence/pages/audio%20to%20llm) for several prompts in a single request. Finally, this time it's the value of `result_url` that you need to note from the response. 
 
 <br />
 
@@ -129,6 +129,10 @@ curl --request GET \
   tr -d '"'
 ```
 
+> Note that this command will only filter the first occurrence of *response* corresponding to the first prompt. Subsequent occurrences will be ignored if your previous request contained more than one prompt.
+
+<br />
+
 | Snippet                           | Description                                                       |
 |-----------------------------------|-------------------------------------------------------------------|
 | \\                                | Allows you to split a long command across multiple lines          |
@@ -137,6 +141,7 @@ curl --request GET \
 | grep -o '[^:]*$' \|               | Captures the content after the last colon                         |
 | tr -d '"'                         | Removes double quotes from the output                             |
 
+<br />
 
 Now with JavaScript, you can also request the same URL as in the previous curl command to achieve a more immediate reading of the response access. You can [open Chrome DevTools](https://developer.chrome.com/docs/devtools/open?hl=en) and paste your edited version of the code below to [execute it from your browser's console](https://developer.chrome.com/docs/devtools/console/javascript?hl=en).
 
@@ -151,7 +156,7 @@ fetch('<your_result_url>', {
 )
 ```
 
-> Knowing that the access can be read with `<receivedObject>.result.audio_to_llm.results[0].results.response` in JavaScript helps us understand that the value we are looking for is part of a much larger structure, which is why it can be tedious to find using the raw result of curl.
+> Knowing that the access can be read with `<receivedObject>.result.audio_to_llm.results[0].results.response` in JavaScript helps us understand that the value we are looking for is part of a much larger structure, which is why it can be tedious to find using the raw result of curl. In the case where your previous request contained more than one prompt, you will need to iterate through the results in this way, for example: `<receivedObject>.result.audio_to_llm.results.forEach(<item> => ...`
 
 <br />
 <br />
