@@ -17,6 +17,10 @@ I have reported the instructions provided in [Instructions.md](https://github.co
 
 #### API Integration
 
+> No need to know React, just run the app and browse!
+
+<br />
+
 1. Load the React app locally
 
     ```
