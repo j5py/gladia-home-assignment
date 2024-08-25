@@ -129,7 +129,7 @@ curl --request GET \
   tr -d '"'
 ```
 
-> Note that this command will only filter the first occurrence of *response* corresponding to the first prompt. Subsequent occurrences will be ignored if your previous request contained more than one prompt.
+> Note that this command will only filter the first occurrence of *response* corresponding to the first prompt. Subsequent occurrences will be ignored if your previous request contained more than one prompt (in this case, you might consider [jq](https://jqlang.github.io/jq/)).
 
 <br />
 
