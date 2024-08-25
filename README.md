@@ -181,6 +181,7 @@ Please let me know if this allows you to solve the issue. If you continue to rec
 Kind regards
 
 <br />
+<br />
 
 ##### Ticket 2
 
@@ -198,6 +199,7 @@ This is the expected behavior of the Gladia API for performance reasons. Current
 
 Kind regards
 
+<br />
 <br />
 
 ##### Ticket 3
@@ -219,6 +221,7 @@ Could you please share your availability for a meeting to discuss your usage req
 Kind regards
 
 <br />
+<br />
 
 ##### Ticket 4
 
@@ -238,6 +241,7 @@ Please let me know if you are making progress. I am available to assist you if y
 
 Kind regards
 
+<br />
 <br />
 
 ##### Ticket 5
