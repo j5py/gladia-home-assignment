@@ -294,14 +294,15 @@ Kind regards
 ### Task 3: Technical Documentation and Communication
 
 #### Documentation Review
+> The added section to enhance the original documentation is italicized.
 
 <br />
 
 ##### Audio to LLM
 
-Harness **the power of the LLM command prompt** to access a range of processing capabilities **beyond transcription**, all in a single request. In addition to speech-to-text, you will fully leverage the value of its content. Ask any question or analysis, as you would do with an assistant.
+*Harness **the power of the LLM command prompt** to access a range of processing capabilities **beyond transcription**, all in a single request. In addition to speech-to-text, you will fully leverage the value of its content. Ask any question or analysis, as you would do with an assistant.*
 
-You only need to write the different treatments you wish to apply to the transcription, with the prompts listed as comma-separated values in the `prompts` list (or array). In addition to the complete transcription, you will obtain a list of results: each will contain the prompt sent to the LLM and its associated output.
+*You only need to write the different treatments you wish to apply to the transcription, with the prompts listed as comma-separated values in the `prompts` list (or array). In addition to the complete transcription, you will obtain a list of results: each will contain the prompt sent to the LLM and its associated output.*
 
 <br />
 
