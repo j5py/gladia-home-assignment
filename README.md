@@ -263,7 +263,7 @@ Good Day,
 
 I appreciate you getting in touch. Let's work together to resolve your concern.
 
-Could you please specify which functionality of Gladia or API key is the subject of the inaccurate transcriptions, and could you provide us with any records of the requests and responses?
+Could you please specify which functionality of Gladia or API key is subject to inaccurate transcriptions, and could you provide us with any records of the requests and responses?
 
 <br />
 
